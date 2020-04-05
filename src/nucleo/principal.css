@@ -1,0 +1,176 @@
+/* menu  */
+.menuFondo{
+    background-color:#000000;
+    
+}
+.nav-tabs{  
+    border-style: none !important; 
+}
+
+.nav{
+    height: 60px;   
+    padding-top: 10px;
+} 
+
+.topnav-right {
+  float: right;
+  justify-content: right;
+}
+/* carrousel  */
+.carousel-item{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 1000px;  
+}
+
+.sizeB{ 
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.carousel-caption{
+    border: 0.5px solid rgba(255, 255, 255, 0.404);
+    padding-bottom: 4%;
+    margin-bottom: 13%;
+    bottom: 0;
+}
+
+
+
+/* titlo  */
+.container{
+    margin-top: 3% !important;
+}
+
+.titlo{
+    border-top: 0.5px solid rgba(0, 0, 0, 0.377);
+    padding: 5% 0 5% 0;   
+}
+
+.colorR{
+    font-weight: bold;
+    color: #ff00ea; 
+    font-size: 2000px;
+}
+
+/* fotos  */
+.fotoPerfil{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
+
+/*carrousel */ 
+  .cardP {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;   
+    height: 280px;
+    width: 200px;
+  /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+    border-style: none !important;
+    margin: 4px;
+    height: 252px;
+  }
+  
+
+  .cardP:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+  }
+  
+  .cardP:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+  }
+
+  .marginBot{
+      margin-bottom: 10%;
+  }
+
+  .row{
+      display: flex !important;
+  }
+
+  /* footer  */
+  .logoF{
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 208px;
+  width: 280px;
+  padding: -50px;
+  }
+
+  .footerBG{
+      background-color: #000000;
+  }
+
+  .paddingT5{
+      padding-top: 5%;
+  }
+  .paddingB5{
+    padding-bottom: 5%;
+  }
+
+  .footerMarginTop{
+    margin-top: 10%;
+  }
+
+  /* button  */
+  .btn-outline-primary{
+      color: #ff00ea !important;
+      border-color: #ff00ea !important;
+  }
+
+  .btn-outline-primary:hover{
+    background-color: #ff00ea !important;
+    border-color: #ff00ea !important;
+    color: white !important;
+  }
+
+  .textDecorationone{
+    text-decoration:none !important;
+  }
+
+  /*carrito de compra*/
+  .carritoTotal, .carritoTotal:hover{
+    border-radius: 100%;
+    padding: 1px 4px;
+    font-size: 12px;
+    background: #ff00ea73;;
+  }
+
+  @media only screen and (max-width:769px) {
+    .logo{
+        top: -24px;
+    }
+    .responsiveCarrouselReceta{
+        width: 300% !important;
+        height: 100%;
+        overflow: auto;
+        white-space: nowrap;
+         text-align: center;
+         display: inline-block;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+

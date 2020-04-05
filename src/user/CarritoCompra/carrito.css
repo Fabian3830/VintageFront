@@ -1,0 +1,88 @@
+#tabla {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #tabla td, #tabla th {
+    padding: 8px;
+
+  }
+  
+  #tabla tr:nth-child(even){background-color: #f2f2f2;}
+
+  
+  #tabla{
+      margin: 0px;
+      width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ff00ea;
+    color: white;
+  }
+
+  .inputSize{
+      width: 20px !important;
+  }
+
+  .input-group > .form-control, .input-group > .form-control-plaintext, .input-group > .custom-select, .input-group > .custom-file {
+      width: 80px !important;
+      font-size: 25px;
+      text-align: center;
+      margin-top: 229%;
+  }
+
+  .customBtnCart{
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .paypal-button.paypal-button-text-color-white{
+    display: none;
+    color: red;
+  }
+
+  .paypal-powered-by{
+    display: none;
+  }
+
+  
+  .imgCarrito{
+    height:300px;
+    width:450px;
+  }
+
+  
+  .iconoEliminarCarrito{
+    height:50px;
+    width:50px;
+  }
+
+  @media only screen and (max-width:769px) {
+
+    /* ocultar la barra rosado  */
+    .displayNone{
+      display: none;
+    }
+    /* ocultar la barra rosado  */
+    #tabla{
+      background-color: rgba(255, 255, 240, 0);
+    }
+
+    .imgCarrito {
+      height: 180px;
+      width: 183px;
+    }
+
+    .iconoEliminarCarrito{
+      height:20px;
+      width:20px;
+    }
+
+    /* margin de cantidad  */
+    .input-group > .form-control, .input-group > .form-control-plaintext, .input-group > .custom-select, .input-group > .custom-file{
+      margin-top: 121%;
+    }
+  }
+  
+

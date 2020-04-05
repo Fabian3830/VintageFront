@@ -1,0 +1,160 @@
+.card{
+    border-style: none;
+}
+
+.card-header{
+    border-style: none;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+
+
+/* image hover  */
+
+.card-body .card-overlay {
+    background: rgba(66, 0, 78, 0.527);
+    position: absolute;
+    height: 95%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+  }
+
+  .card-body:hover .card-overlay{
+    opacity: 1;
+  }
+
+.imgProd{
+    max-height: 400px;
+    max-width: 100%;
+    min-height: 400px;
+    min-width: 100%;
+    margin: 0px;    
+    opacity: 1;
+
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+
+.btnProductos{
+    position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+
+.card-body:hover .btnProductos{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+
+.btnProductos:hover{
+    opacity: 1;
+
+  }
+
+  .fadeIn-top{
+    top: 20%;
+  }
+
+
+  /* btn  */
+  .btnPink{
+      background-color: rgb(255, 0, 255);
+      border-color: rgb(255, 0, 255);
+  }
+
+  .btnPink:hover{
+    background-color: rgb(255, 0, 255);
+    border-color: rgb(255, 0, 255);
+  }
+
+  .btnPinkFuerte{
+    background-color: rgb(255, 0, 255);
+    border-color: rgb(255, 0, 255);
+  }
+
+  .customBtn{
+    background-color: rgba(0, 0, 0, 0.473);
+    border-style: none;
+  }
+
+  /* carrito  */
+  .msgStatic{
+    opacity: 1;
+    position: fixed;
+    top: 1%;
+    right: 40%;
+    z-index: 10000;
+  }
+
+  /* grid eliminar  */
+  .MuiDialog-paperWidthSm{
+    max-width: 1000px !important;
+    width: 1000px !important;
+  }
+
+  .MuiTypography-h6{
+    font-size: 2.25rem !important;
+  }
+
+  .MuiTypography-body1{
+    font-size: 20px !important;
+  }
+
+  .MuiButton-label{
+    font-size: 20px !important;
+  }
+
+  /* selecionar categoria receta  */
+.seleccionarCategoria{
+  font-size: 20px;
+  display:flex;
+  flex-direction: row;
+  margin: 3% 0;
+  border-bottom: 5px solid rgba(247, 112, 218, 1);
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+
+/* tablet version  */
+@media only screen and (max-width:769px) {
+  .imgProd{
+    background-attachment:fixed;
+  }
+  
+}
+
+@media only screen and (max-width:414px) {
+  .seleccionarCategoria{
+    justify-content: start;
+  }
+}
+
+
+
+
