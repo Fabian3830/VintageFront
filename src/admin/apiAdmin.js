@@ -186,6 +186,7 @@ export const eliminarReceta = (recetaId) => {
 export const  getObjeto= (objeto,query='') => {
 
    
+    console.log(`${API}/${objeto}${query}`)
     return fetch(`${API}/${objeto}${query}`, {
         method: "GET",
         headers:{
@@ -206,6 +207,7 @@ export const  getObjeto= (objeto,query='') => {
     })
 }
 
+ 
 export const eliminarObjeto = (objeto,productId) => {
     return fetch(`${API}/${objeto}/${productId}`, {
             method: "DELETE",

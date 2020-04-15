@@ -89,22 +89,24 @@ const Receta = () => {
 
         }
         if (array.length>0&&query!='') {
-            cargarReceta(''+`?filter={"where":{"aEtiqueta":${JSON.stringify(array)}    , "sNombre": "/${query}/i"}}`)
+            cargarReceta(''+`/custom/{"aEtiqueta":${JSON.stringify(array)}    , "sNombre":  {$regex: '${query}'}}`)
             console.log('camino 1')
-            console.log(''+`?filter={"where":{"aEtiqueta":${JSON.stringify(array)}    , "sNombre":"/${query}/i"}}`)
+         console.log(''+`/custom{"aEtiqueta":${JSON.stringify(array)}    , "sNombre":  {$regex: '${query}'}}`)
         }else if(array.length>0){
-            cargarReceta(''+`?filter={"where":{"aEtiqueta":${JSON.stringify(array)}}}`)
+            cargarReceta(''+`/custom/{"aEtiqueta":${JSON.stringify(array)}}`)
             console.log('camino 2')
         }
         else if( array.length==0&&query!=''){
-            cargarReceta(`?filter={"where":{"sNombre":  {"regexp": "/${query}/i"}}}`)
+            cargarReceta(`/custom/{"sNombre":  {$regex: '${query}'}}`)
             console.log('camino 3')
         }
         else{
-            cargarReceta('')
+            cargarReceta('/custom/{}')
             console.log('camino 4')
         }
-        
+
+        //{"sNombre":{ $regex: 'a' }}
+        //{"aEtiqueta": [  "5e6bfe6364dd501d6cdc5931"]}
 
     }
 

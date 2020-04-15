@@ -5,29 +5,31 @@ import {Link} from 'react-router-dom';
 import '../index.css';
 import '../css.css';
 import moment from 'moment';
-import {errorTranslator,getObjeto} from './../admin/apiAdmin'; 
+import {errorTranslator,insertObject} from './../admin/apiAdmin'; 
 import RecetaInterfaz from './RecetaInterfaz';
 const AdminD = () => {
 
-    const {_id, sNombre, sApellido,sCorreo, dNacimiento, oDireccion} = isAutentificacion().cliente;
+    const {_id, sNombre, sApellido,sCorreo, dNacimiento, oDireccion,aRecetas} = isAutentificacion().cliente;
     const fechaNacimiento =moment(dNacimiento).format('DD/MM/YYYY'); 
     
     const [receta, setReceta] = useState([]);
     const [error, setError] = useState(false);
 
-    const cargarReceta = () => {
+    const cargarReceta = 
+    () => {
       
-
-        getObjeto('Cliente','/cursos/'+_id)
+        ///Cliente/Recetas/5e964afa753c70b13f2037a8
+        console.log(aRecetas)
+        insertObject('Cliente/Recetas',aRecetas)
         .then((data={error:{message:'hay un problema, intente más tarde'}})=>{
-            
+            console.log(data);
                 if ('error' in data) {
 
                     setError(errorTranslator(data.error.message))        
                     
                 }else{
           
-                    setReceta(data.value);
+                    setReceta(data);
                     console.log(data);
                                                              
                 }
@@ -36,7 +38,10 @@ const AdminD = () => {
     }
 
     useEffect(()=>{
-       // cargarReceta()
+        cargarReceta()
+       
+
+       
     }, []);
    
     

@@ -10,15 +10,15 @@ import {errorTranslator,getObjeto} from './../admin/apiAdmin';
 
 const Perfil = () => {
 
-    const {_id, sNombre, sApellido,sCorreo,dNacimiento,oDireccion} = isAutentificacion().cliente;
+    const {_id, sNombre, sApellido,sCorreo,dNacimiento,oDireccion,aRecetas} = isAutentificacion().cliente;
     const fechaNacimiento =moment(dNacimiento).format('DD/MM/YYYY'); 
     const [receta, setReceta] = useState([]);
     const [error, setError] = useState(false);
 
     const cargarReceta = () => {
       
-
-        getObjeto('Cliente','/cursos/'+_id)
+        // "_id": "5e8d1e64eb1c9c1ddc2d3e01"
+        getObjeto('Receta','/custom/'+_id)
         .then((data={error:{message:'hay un problema, intente más tarde'}})=>{
             
                 if ('error' in data) {
@@ -37,6 +37,7 @@ const Perfil = () => {
 
     useEffect(()=>{
         //cargarReceta()
+        console.log(aRecetas)
     }, []);
    
     
