@@ -24,6 +24,7 @@ const Receta = () => {
         getObjeto('Receta',query)
         .then((data={error:{message:'hay un problema, intente más tarde'}})=>{
             
+            console.log('CARGAR Receta:',data)
                 if ('error' in data) {
 
                     setError(errorTranslator(data.error.message))        
@@ -112,6 +113,7 @@ const Receta = () => {
         getObjeto('Categoria')
         .then(data=>{
             
+            console.log('CARGAR CATEGORIA:',data)
             if(data=== undefined){
 
                 setError( errorTranslator('Problemas, intente mas tarde'));
@@ -124,13 +126,13 @@ const Receta = () => {
                     
                 }else{
                    
-                    data.value.forEach(element => {            
+                    data.forEach(element => {            
                             element['add']=false                           
                         
                     });
 
                     
-                    setaCategorias(data.value);
+                    setaCategorias(data);
                     
                 }
                 
@@ -141,6 +143,7 @@ const Receta = () => {
 
     //carga al puro principio y cuando sea que se haga cambio va a cargar 
     useEffect(()=>{
+        console.log('puta madre')
         cargarReceta()
         cargarCategoriaDisponibles()
     }, []);

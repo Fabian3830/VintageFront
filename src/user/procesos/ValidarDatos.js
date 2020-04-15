@@ -7,7 +7,7 @@ const regexsNombre_Apellido = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,60}$/
 const regex_url = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
 /*La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
 NO puede tener otros símbolos. */
-const regexPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+const regexPassword = /^.{8,100}?/
 
 const regexsCorreo = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
 //#endregion
@@ -22,7 +22,10 @@ export class resultado {
 
 function  isClienteValid(objeto) {
     var respuesta = new resultado(true, 'todo bien')
-
+    if (objeto.aPermisos.length>0) {
+        //   alert ("Error!");
+        return new resultado(false, 'administrador sin permisos')
+    }
     if (!regexsNombre_Apellido.test(objeto.sNombre)) {
         //false
         return respuesta = new resultado(false, 'Tu Nombre tiene que tener mas de 1 carácter!')
@@ -46,6 +49,7 @@ function  isClienteValid(objeto) {
         //   alert ("Error!");
         return new resultado(false, 'Fecha inválida ')
     }
+  
 
     return respuesta;
 }

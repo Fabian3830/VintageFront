@@ -14,7 +14,7 @@ import '../index.css';
 export const autentificacion = (data, cb) => {
    
     if(typeof window !== 'undefined'){
-        localStorage.setItem('jwt', JSON.stringify(data));
+        localStorage.setItem('jwt', JSON.stringify({token:"Sofritonomá",cliente:data}));
         //en el cb se puede redireccionar, limpiar el state, etc
         cb();
     }

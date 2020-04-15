@@ -17,6 +17,8 @@ import EliminarCategoria from './admin/support/Categorias/delete';
 import ModificarCategoria from './admin/support/Categorias/update';
 import AgregarCategoria from './admin/support/Categorias/insert';
 
+import SignUpAdmin from './admin/support/admins/insert';
+
 
 import Factura from './admin/support/Factura/listar';
 import EliminarFactura from './admin/support/Factura/delete';
@@ -28,7 +30,6 @@ import Historial from './admin/support/Historial/listar';
 import EliminarHistorial from './admin/support/Historial/delete';
 import ModificarHistorial from './admin/support/Historial/update';
  
-
 
 import AgregarProducto from './admin/AgregarProducto';
 import Producto from './user/Producto';
@@ -125,16 +126,13 @@ const Routes = () => {
              
             <AdminRoute path="/Historial/Support/Eliminar/:_Id" 
             exact component={EliminarHistorial}/>
-            
-     {/*       
-           <AdminRoute path="/Historial/Support/actualizar/:_Id/" 
-            exact component={ModificarHistorial}/>
-          
-
-     */}
+  
             <PrivateRoute path="/Cart" exact
              component={Carrito}/>
 
+
+             <AdminRoute path="/admin/Support/insert" 
+             exact component={SignUpAdmin}/>
 
         </Switch>
     </BrowserRouter>

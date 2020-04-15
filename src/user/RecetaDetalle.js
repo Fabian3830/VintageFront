@@ -58,20 +58,18 @@ const RecetaDetalle = (props) => {
 
 
 
-    const isVer = (recetaId,ruta) => {
+    const isVer = (recetaId,idCliente) => {
         // funcion ubicado en apiReceta 
         ///Cliente/Ver/{id}
-        getObjeto('Cliente',`/${ruta}/${recetaId}` ).then( (data={error:{message:'hay un problema, intente más tarde'}})=>{
+        ///ver/{id}/{idR}
+        getObjeto('ver',`/${idCliente}/${recetaId}` ).then( (data={error:{message:'hay un problema, intente más tarde'}})=>{
 
-            
-            if ('error' in data) {            
-                //Authorization header value has too many parts. It must follow the pattern: 'Bearer xx.yy.zz' where xx.yy.zz is a valid JWT token.
-                setError(errorTranslator( data.error.message));
-            } else {
-             console.log('ver',data.value)
-                setVer(data.value);
+            console.log(data)
+            if (data!==undefined){
+             
+                setVer(data);
                 
-            }
+            }else setVer(false);
             
 
         })
@@ -89,9 +87,9 @@ const RecetaDetalle = (props) => {
         cargarDetalleReceta(recetaId);
  
         if (isAutentificacion()) {
-            isVer(recetaId,'VerS');    
+            isVer(recetaId,isAutentificacion().cliente._id);    
         } else {
-            isVer(recetaId,'VerU');    
+            isVer(recetaId,'_');    
         }
          
     }, []);

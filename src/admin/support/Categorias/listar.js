@@ -28,7 +28,7 @@ const Categoria = () => {
                 if ('error' in data) {
                     setError(errorTranslator(data.error.message))
                 }else{
-                    setCategoriaDisponibles(data.value);
+                    setCategoriaDisponibles(data);
                     //console.log(data);
                 }
             }

@@ -93,11 +93,7 @@ const ModificarCategoria = (props) => {
           
           
           
-          
-          
-          
-          
-          
+           
           
           
           */  

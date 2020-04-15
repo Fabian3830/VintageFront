@@ -82,6 +82,7 @@ const SignIn = () => {
                      insertObject('login',{password:sContrasena,email:sCorreo}).then(
                     (data={error:{message:'hay un problema, intente más tarde'}} )  => {
                       
+                        //console.log(data.bAdmin);
                         ('error' in data)?
 
                             setValues({...values,
@@ -89,11 +90,11 @@ const SignIn = () => {
                                 loading: false
                             })
                         
-                        : autentificacion(data.value, () => {
+                        : autentificacion(data, () => {
                                 setValues({...values,
                                     redireccionar: true,
                                     loading: false,
-                                    bAdmin: data.value.cliente.bAdmin,
+                                    bAdmin: data.bAdmin,
                                 });
                             });
                     })

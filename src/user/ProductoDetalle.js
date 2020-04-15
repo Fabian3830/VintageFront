@@ -57,7 +57,7 @@ const ProductoDetalle = (props) => {
         // funcion ubicado en apiProducto 
         getObjeto('Articulo',`/${productoId}`).then(
             (data={error:{message:'hay un problema, intente más tarde'}}) =>{            
-
+            console.log('DETALLE PRODUCTO ',data)
             if ('error' in data) {
 
                 setError(data.error.message);

@@ -180,7 +180,7 @@ export const eliminarReceta = (recetaId) => {
  * Aviso estos metodos de abajo seran implementados para realizar operaciones basicas
  *  insert, delete, update, get
  * @param body se refiere al objeto que va a enviarse en el body
- * @param token
+ 
  * @param objeto se refiere al objeto del backend que se va a usar
  */
 export const  getObjeto= (objeto,query='') => {
@@ -191,17 +191,18 @@ export const  getObjeto= (objeto,query='') => {
         headers:{
             Accept: 'application/json',
             "Content-Type": "application/json",
-            Authorization: `Bearer ${isAutentificacion().token}`
+            
         },
-        
+    
     })
             
     .then(response => {
+ 
         return response.json()
     })
     .catch(err => {
         
-        console.log(EvalError)
+        console.log(err)
     })
 }
 
@@ -211,7 +212,7 @@ export const eliminarObjeto = (objeto,productId) => {
             headers:{
                 Accept: 'application/json',
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${isAutentificacion().token}`
+                
             },
         })
                 
@@ -228,11 +229,11 @@ export const eliminarObjeto = (objeto,productId) => {
 export const modificarObjeto = (objeto,body) => {
 
     return fetch(`${API}/${objeto}/${body._id}`, {
-        method: "PATCH",
+        method: "PUT",
         headers:{
             Accept: 'application/json',
             "Content-Type": "application/json",
-            Authorization: `Bearer ${isAutentificacion().token}`
+            
         },
         body: JSON.stringify(body) 
         
@@ -254,7 +255,7 @@ export const getObjetonyId = (objeto,productId) => {
             headers:{
                 Accept: 'application/json',
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${isAutentificacion().token}`
+                
             }
         })
                 
@@ -275,7 +276,7 @@ export const insertObject = ( objeto,body) => {
         headers:{
             Accept: 'application/json',
             "Content-Type": "application/json",
-            Authorization: `Bearer ${isAutentificacion().token}`
+            
         },
 
         body: JSON.stringify(body)  

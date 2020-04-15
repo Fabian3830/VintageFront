@@ -71,7 +71,7 @@ const Menu = ({history}) => {
 
     // -----------salir sesion --------------
 
-    const {sPermisos} =isAutentificacion();
+    //const {sPermisos} =isAutentificacion();
     //solo es para definir el rol mientras todavia no existe en la api
 
     return(
