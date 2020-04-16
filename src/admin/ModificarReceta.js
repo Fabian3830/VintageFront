@@ -179,7 +179,7 @@ const ModificarReceta = (props) => {
        const cargarCategoriaDisponibles = () => {
         getObjeto('Categoria')
         .then(data=>{
-            
+            console.log('AAAAAAAAAA',data)
             if(data=== undefined){
                 
                 
@@ -190,7 +190,7 @@ const ModificarReceta = (props) => {
                     
                 }else{
                     console.log(data);
-                    data.value.forEach(element => {
+                    data.forEach(element => {
                    
                             element['add']=false    
                        
@@ -198,7 +198,7 @@ const ModificarReceta = (props) => {
                     });
 
                     
-                    setaCategorias(data.value);
+                    setaCategorias(data);
                     
                  
                 }

@@ -34,20 +34,11 @@ const AgregarCategoria = () => {
          if (nombre.length>0) {
              //hacer request al api para crear categoria
          insertObject('Categoria',{sNombre:nombre}).then(
-            data=>{
+            (data={error:{message:'hay un problema, intente más tarde'}}) =>{
 
-                if (data === undefined) {
-                    setValor({
-                      ...valor,
-                      error:'Problemas, intente más tarde'
-                    });
-                  } else{
-                    if ('error' in data) {
-                        setValor({...valor, error:errorTranslator(data.error.message), funciona: false});
-                        
-                    } else {
-        
-                      
+
+                    if (data==="insertado") {
+
                         setValor({
                             ...valor,
                             sNombre: '',
@@ -55,15 +46,14 @@ const AgregarCategoria = () => {
                             error: false,                
                             funciona: true
                         });
-                    }
+
+                    } else if ('error' in data) {
+                        setValor({...valor, error:errorTranslator(data.error.message), funciona: false});
+                        
+                    } 
 
                   }
 
-              
-
-                
-                }
-    
              )
 
          } else {

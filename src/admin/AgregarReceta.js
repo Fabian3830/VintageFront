@@ -149,10 +149,9 @@ const AgregarReceta = () => {
                 .then((data={error:{message:'hay un problema, intente más tarde'}})=>{
 
 
-                     
-                     if('error' in data){
-                        setValor({...valor, error:errorTranslator(data.error.message)});
-                    }else{
+                     if(data==="insertado"){
+
+
                         setValor({
                             ...valor, 
                             sNombre: "",
@@ -165,6 +164,9 @@ const AgregarReceta = () => {
                             loading: false,
                             recetaCreado: data.sNombre,
                         })
+
+                     } else if('error' in data){
+                        setValor({...valor, error:errorTranslator(data.error.message)});
                     }
                     
                 })

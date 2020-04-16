@@ -6,7 +6,7 @@ import '../index.css';
 import '../css.css';
 import RecetaInterfaz from './RecetaInterfaz';
 import moment from 'moment';
-import {errorTranslator,getObjeto} from './../admin/apiAdmin'; 
+import {errorTranslator,insertObject} from './../admin/apiAdmin'; 
 
 const Perfil = () => {
 
@@ -17,26 +17,27 @@ const Perfil = () => {
 
     const cargarReceta = () => {
       
-        // "_id": "5e8d1e64eb1c9c1ddc2d3e01"
-        getObjeto('Receta','/custom/'+_id)
-        .then((data={error:{message:'hay un problema, intente más tarde'}})=>{
-            
-                if ('error' in data) {
+      ///Cliente/Recetas/5e964afa753c70b13f2037a8
+      console.log(aRecetas)
+      insertObject('Cliente/Recetas',aRecetas)
+      .then((data={error:{message:'hay un problema, intente más tarde'}})=>{
+          console.log(data);
+              if ('error' in data) {
 
-                    setError(errorTranslator(data.error.message))        
-                    
-                }else{
-          
-                    setReceta(data.value);
-                    console.log(data);
-                                                             
-                }
-       
-        })
+                  setError(errorTranslator(data.error.message))        
+                  
+              }else{
+        
+                  setReceta(data);
+                  console.log(data);
+                                                           
+              }
+     
+      })
     }
 
     useEffect(()=>{
-        //cargarReceta()
+        cargarReceta()
         console.log(aRecetas)
     }, []);
    
